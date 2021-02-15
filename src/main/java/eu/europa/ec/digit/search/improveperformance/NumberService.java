@@ -1,9 +1,6 @@
 package eu.europa.ec.digit.search.improveperformance;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
@@ -32,6 +29,13 @@ public class NumberService {
     }
 
     public Integer findSmallestDuplicateImproved(List<Integer> data) {
+
+        Set<Integer> setOfInt = new HashSet<>();
+        for(int element : data){
+
+            if (setOfInt.add(element) == false)
+                return element;
+        }
 
         return 0;
 
